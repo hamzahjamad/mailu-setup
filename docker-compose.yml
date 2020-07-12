@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  mailu-setup:
+    image: mailu/setup
+    ports:
+      - "80:80"
+    networks:
+      - backend
+  redis:
+    image: redis
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: "bridge"
